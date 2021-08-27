@@ -1,23 +1,26 @@
 import React from 'react';
 import Button from './Button';
-// import PropTypes from "prop-types";
+//import PropTypes from 'prop-types';
 
-const Header = ({ title }) => {
-    return (
-        <div className="header">
-            <h1>{title}</h1>
-            <Button color="purple" text="Show Add Tak Bar"/>
-        </div>
-    )
-}
+const Header = ({ title, toggleShow, showAddTask }) => {
+  return (
+    <header className="header">
+      <h1>{title}</h1>
+      <Button
+        color={showAddTask ? 'red' : 'purple'}
+        text={showAddTask ? 'Close Add Task Bar' : 'Show Add Task Bar'}
+        toggleShow={toggleShow}
+      />
+    </header>
+  );
+};
 
 export default Header;
 
-
 // Header.defaultProps = {
-//     title: "Task Tracker"
-// }
+//   title: 'Task Tracker',
+// };
 
-// Header.PropTypes = {
-//     title: PropTypes.string.isRequired,
-// }
+// Header.propTypes = {
+//   title: PropTypes.string.isRequired,
+// };

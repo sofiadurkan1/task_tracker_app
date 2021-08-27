@@ -1,16 +1,20 @@
-import React, {useState} from 'react'
+
+import React from 'react';
 import TaskItem from './TaskItem';
 
-function Tasks({tasks,deleteTask}) {
-   
-    
-    return (
-        <div>
-           {tasks.map((task) => (
-           <TaskItem key ={task.id} task ={task} deleteTask={deleteTask}/>))}
-            
-        </div>
-    )
-}
+const Tasks = ({ tasks, deleteTask, toggleDone }) => {
+  return (
+    <div>
+      {tasks.map((task) => (
+        <TaskItem
+          key={task.id}
+          task={task}
+          deleteTask={deleteTask}
+          toggleDone={toggleDone}
+        />
+      ))}
+    </div>
+  );
+};
 
-export default Tasks
+export default Tasks;

@@ -1,28 +1,29 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-function AddTask({addTask}) {
-  const [text, setText] = useState("");
-  const [day, setDay] = useState("");
+const AddTask = ({ addTask }) => {
+  const [text, setText] = useState('');
+  const [day, setDay] = useState('');
 
   const handleTextChange = (e) => setText(e.target.value);
   const handleDayChange = (e) => setDay(e.target.value);
 
   const onSubmit = (e) => {
-      e.preventDefault();
-      console.log(text,day)
-      addTask({text:text,
-        day:day,
-        isDone :false});
-  }
+    e.preventDefault();
+    addTask({ text, day, isDone: false });
+
+    setText('');
+    setDay('');
+  };
 
   return (
-    <form className="add-form" onSubmit = {onSubmit}>
+    <form className="add-form" onSubmit={onSubmit}>
       <div className="form-control">
         <label htmlFor="task">Task</label>
         <input
           id="task"
           name="text"
           type="text"
+          value={text}
           placeholder="AddTask"
           onChange={handleTextChange}
         />
@@ -33,6 +34,7 @@ function AddTask({addTask}) {
           id="day"
           name="day"
           type="text"
+          value={day}
           placeholder="Add Day & Time"
           onChange={handleDayChange}
         />
@@ -40,6 +42,6 @@ function AddTask({addTask}) {
       <input type="submit" value="Save Task" className="btn btn-block" />
     </form>
   );
-}
+};
 
 export default AddTask;
