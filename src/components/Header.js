@@ -1,14 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types'
-import Button from "./Button"
+import Button from './Button';
+// import PropTypes from "prop-types";
 
-function Header(props) {
+const Header = ({ title }) => {
     return (
         <div className="header">
-            <h1>{props.title} </h1>
-            <Button color="purple" text = "Show Add Task Bar"/>
-          
-            
+            <h1>{title}</h1>
+            <Button color="purple" text="Show Add Tak Bar"/>
         </div>
     )
 }

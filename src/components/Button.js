@@ -1,12 +1,12 @@
 import React from 'react'
 
-function Button({color,text}) {
+export const Button = ({color, text}) => {
+    const handleClick = () => {
+        console.log("click");
+    }
     return (
-        <div className="btn">
-           <button style={{backgroundColor:color}}>{text}</button>
-            
-        </div>
-    );
+        <button className="btn" style={{backgroundColor: color}} onClick={handleClick}>{text}</button>
+    )
 }
 
-export default Button
+export default Button;
